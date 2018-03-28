@@ -287,7 +287,7 @@ class Variable(object):
         if self.data_type == VISIBLE_STRING:
             # Not sure why these chars show up in strings, but remove them if found
             for rep in [b'\x0f', b'\x18', b'\xf0', b'\x9f', b'\xff']:
-                data = data.replace(rep, '')
+                data = data.replace(rep, b'')
             data = data.rstrip(b'\x00')
             return data.decode("ascii")
         elif self.data_type == UNICODE_STRING:
